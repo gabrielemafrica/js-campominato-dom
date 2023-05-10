@@ -19,7 +19,7 @@ play.addEventListener(
         //prendo il livello
         const level = parseInt(document.getElementById("level").value);
         console.log("livello di gioco:" ,level);
-        
+
         //variabile numero celle e difficoltá
         let numeroCelle;
         let levelClass;
@@ -55,9 +55,7 @@ play.addEventListener(
             square.addEventListener(
                 'click',
                 function () {
-                    if(bombArray.includes(i)){
-                        this.classList.add('bomb')
-                    }else{
+                    if(!bombArray.includes(i)){
 
                         if (this.classList.contains('selected')) {
                             this.classList.remove('selected');
@@ -66,6 +64,13 @@ play.addEventListener(
                             this.classList.add('selected');
                             console.log(`Hai SELEZIONATO il numero ${i}`);
                         }
+                    }else{
+                        //aggiungo classe bomba
+                        this.classList.add('bomb');
+                        console.log(`BOOOOM!! il numero ${i} nascondeva una BOMBA!`);
+                        //conto i punti
+                        const punti = document.getElementsByClassName('selected').length;
+                        console.log(`Hai totalizzato ${punti} punti.`);
                     }
                     
                 }
