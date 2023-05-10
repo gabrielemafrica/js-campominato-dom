@@ -56,7 +56,7 @@ play.addEventListener(
                 'click',
                 function colora() {
                     if(!bombArray.includes(i)){
-
+                        //possibilità di deselezionare e selezionare
                         if (this.classList.contains('selected')) {
                             this.classList.remove('selected');
                             console.log(`Hai DESELEZIONATO il numero ${i}`);
