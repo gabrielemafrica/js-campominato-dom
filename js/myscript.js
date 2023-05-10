@@ -54,7 +54,7 @@ play.addEventListener(
             //al click lo square si colora
             square.addEventListener(
                 'click',
-                function () {
+                function colora() {
                     if(!bombArray.includes(i)){
 
                         if (this.classList.contains('selected')) {
@@ -68,6 +68,36 @@ play.addEventListener(
                         //aggiungo classe bomba
                         this.classList.add('bomb');
                         console.log(`BOOOOM!! il numero ${i} nascondeva una BOMBA!`);
+
+                        //disattivo il gioco non va
+                        //square.removeEventListener('click', colora);
+
+                        //faccio vedere tutte le bombe
+                            //prendo gli square, creo un array
+                        const squareNumArray = document.getElementsByClassName("square");
+                        
+                        //variabile con classe dad aggiungere
+                        const bombClass = "bomb";
+
+                        //controllo presenza e assegno classe
+                        controlloPresenzaAssegnoClasse(bombArray, squareNumArray, bombClass);
+                        /*
+                        //qui nel dettaglio la funzione
+                        for (let i = 0; i < bombArray.length; i++) {
+                            //prendo il numero di ogni bomba
+                            const numeroBomba = bombArray[i];
+
+                            for (let i = 0; i < squareNumArray.length; i++) {
+                                //prendo il numero di ogni square
+                                const squareNumero = i + 1;
+
+                                //se coincidono inserisci la classe
+                                if (squareNumero === numeroBomba) {
+                                    squareNumArray[i].classList.add('bomb');
+                                }
+                            }
+                        }
+                        */
                         //conto i punti
                         const punti = document.getElementsByClassName('selected').length;
                         console.log(`Hai totalizzato ${punti} punti.`);
@@ -121,8 +151,26 @@ function generaArray(numMin, numMax, quantiNum){
     //restituisco l'array
     return arrayDiNumeri;
 }
-const prova = generaArray(1, 100, 16);
-console.log(prova);
+
+//controllo prenza numero di un array in un altro array con numeri ordinati e aggiungo una classe
+function controlloPresenzaAssegnoClasse(arrayRicercato, arrayInCuiCerco, classeDaAggiungere) {
+    
+    for (let i = 0; i < arrayRicercato.length; i++) {
+        //prendo il numero di ogni bomba
+        const numeroBomba = arrayRicercato[i];
+        
+        for (let i = 0; i < arrayInCuiCerco.length; i++) {
+            //prendo il numero di ogni square
+            const squareNumero = i + 1;
+            
+            //se coincidono inserisci la classe
+            if (squareNumero === numeroBomba) {
+                arrayInCuiCerco[i].classList.add(classeDaAggiungere);
+            }
+        }
+    }
+}
+
 
 
 
