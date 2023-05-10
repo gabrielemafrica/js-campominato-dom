@@ -17,7 +17,11 @@ select, button{
     width: 80%;
     margin: 0 auto;
     text-align: center;
+    padding-top: 30px;
 
+}
+.game-title{
+    margin-bottom: 10px;
 }
 .container-grid{
     width: 500px;
