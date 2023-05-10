@@ -24,6 +24,7 @@ select, button{
     height: 500px;
     border: 2px solid black;
     margin: 50px auto;
+    position: relative;
 }
 /* quadrati */
 .container-grid .square{
@@ -50,4 +51,17 @@ select, button{
 }
 .bomb{
     background-color: red;
+}
+.boom{
+    color: orange;
+    font-size: 25px;
+    text-decoration: underline;
+}
+.game-over{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 0, 0, 0.2);
 }

@@ -38,7 +38,7 @@ play.addEventListener(
 
         //creo array di numeri casuali
         const bombArray = generaArray(1, numeroCelle, 16);
-        console.log(bombArray);
+        console.log('numeri bomba: ', bombArray);
 
         for (let i = 1; i <= numeroCelle; i++) {
             
@@ -66,16 +66,13 @@ play.addEventListener(
                         }
                     }else{
                         //aggiungo classe bomba
-                        this.classList.add('bomb');
+                        this.classList.add('boom');
                         console.log(`BOOOOM!! il numero ${i} nascondeva una BOMBA!`);
-
-                        //disattivo il gioco non va
-                        //square.removeEventListener('click', colora);
 
                         //faccio vedere tutte le bombe
                             //prendo gli square, creo un array
                         const squareNumArray = document.getElementsByClassName("square");
-                        
+
                         //variabile con classe dad aggiungere
                         const bombClass = "bomb";
 
@@ -101,6 +98,13 @@ play.addEventListener(
                         //conto i punti
                         const punti = document.getElementsByClassName('selected').length;
                         console.log(`Hai totalizzato ${punti} punti.`);
+
+                        //disattivo il gioco non va
+                        //creo un div che scherma
+                        const gameOver = document.createElement('div');
+                        gameOver.classList.add('game-over');
+                        
+                        container.prepend(gameOver);
                     }
                     
                 }
