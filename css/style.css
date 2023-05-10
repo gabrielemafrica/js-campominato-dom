@@ -1,0 +1,48 @@
+/* generale */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* containers */
+#container{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+}
+.container-grid{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    margin: 50px auto;
+}
+/* quadrati */
+.container-grid .square{
+    border: 2px solid black;
+    float: left;
+}
+/* spacifiche quadrati */
+.easy{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+.normal{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.hard{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.selected{
+    background-color: lightblue;
+}
+.bomb{
+    background-color: red;
+}
