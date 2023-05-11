@@ -8,6 +8,10 @@ const container = document.getElementById("grid");
 
 const play = document.getElementById("play");
 
+//screo lo score per contare i punti
+
+let score = 0;
+
 //evento click
 play.addEventListener(
     "click",
@@ -60,9 +64,13 @@ play.addEventListener(
                         if (this.classList.contains('selected')) {
                             this.classList.remove('selected');
                             console.log(`Hai DESELEZIONATO il numero ${i}`);
+                            score--;
+                            console.log(`Punteggio attuale ${score}`);
                         }else{
                             this.classList.add('selected');
                             console.log(`Hai SELEZIONATO il numero ${i}`);
+                            score++;
+                            console.log(`Punteggio attuale ${score}`);
                         }
                     }else{
                         //aggiungo classe bomba
@@ -98,6 +106,9 @@ play.addEventListener(
                         //conto i punti
                         const punti = document.getElementsByClassName('selected').length;
                         console.log(`Hai totalizzato ${punti} punti.`);
+
+                        //conto i punti con score
+                        console.log(`Punteggio: ${score}`);
 
                         //disattivo il gioco non va
                         //creo un div che scherma
